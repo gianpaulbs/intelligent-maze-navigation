@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/5544d180e0.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Index CSS -->
+  <link rel="stylesheet" href="css/index.css">
+
+  <!-- Title -->
+  <title>Generador de laberintos</title>
+  
+</head>
+<body>
+  <main>
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">
+          <img src="img/logo.png">
+        </div>
+        <div class="options">
+          <ul>
+             <a href="index.html"><li title="Inicio"><img src="img/home.svg" width="37px" height="37px"></li></a>
+              <a href="about.html"><li title="Acerca de"><img src="img/about.svg" width="32px" height="32px"></li></a>
+            <a href="instructions.html"><li title="Instrucciones"><img src="img/instructions.svg" width="32px" height="32px"></li></a>
+           </ul>
+        </div>
+      </div>
+      <div class="content">
+        <div class="banner">
+          <h1>GENERADOR DE LABERINTOS</h1>
+        </div>
+
+        
+        <div class="laberinto">
+            <div class="control">
+                <p><i class="fa-solid fa-wallet"></i>Tamaño de laberinto</p>
+                <div class="buttons">
+                <button>Pequeño</button>
+                <button>Mediano</button>
+                <button>Grande</button>
+                </div>
+
+                <p><i class="fa-solid fa-wallet"></i>Algoritmo de     recorrido</p>
+                <div class="buttons">
+                <button>Dijkstra</button>
+                <button>BFS</button>
+                <button>A*</button>
+                </div>
+
+                <button class="centrar">Generar</button>
+            </div>
+            <img width="300px" src="img/laberinto.png"></img>
+
+        </div>
+        
+      </div>
+    </div>
+  </main>
+  
+  <footer></footer>
+</body>
+</html>
