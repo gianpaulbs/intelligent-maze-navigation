@@ -1,4 +1,5 @@
 import random
+from constants import LITTLE_MAZE, MEDIUM_MAZE, BIG_MAZE
 
 def generate_maze(width, height):
     maze = [[0] * width for _ in range(height)]
@@ -38,9 +39,7 @@ def maze_to_list(maze):
         maze_list.append(row_str)
     return maze_list
 
-width, height = 21, 21
+width, height = BIG_MAZE, BIG_MAZE
 
 maze = generate_maze(width, height)
 maze_list = maze_to_list(maze)
-
-print(maze_list)

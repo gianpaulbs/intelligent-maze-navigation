@@ -2,9 +2,12 @@ import mazes
 import numpy as np
 import networkx as nx
 import matplotlib.pyplot as plt
+from constants import LITTLE_MAZE, MEDIUM_MAZE, BIG_MAZE
 
 laberinto = mazes.maze_list
 laberinto_array = np.array([[0 if c == ' ' else 1 for c in row] for row in laberinto])
+
+print(laberinto_array)
 
 G = nx.Graph()
 
@@ -37,15 +40,43 @@ fin = list(G.nodes())[-1]
 
 camino_corto = nx.dijkstra_path(G, inicio, fin, weight='weight')
 
-pos = dict((nodo, nodo) for nodo in G.nodes())
-labels = {edge: G.get_edge_data(*edge)['weight'] for edge in G.edges()}
-nx.draw(G, pos, with_labels=False, font_weight='bold', node_size=5)
-nx.draw_networkx_edge_labels(G, pos, edge_labels=labels)
+# Gráfica con grafos
+# pos = dict((nodo, nodo) for nodo in G.nodes())
+# labels = {edge: G.get_edge_data(*edge)['weight'] for edge in G.edges()}
 
-edges_camino_corto = list(zip(camino_corto, camino_corto[1:]))
-nx.draw_networkx_edges(G, pos, edgelist=edges_camino_corto, edge_color='red', width=3)
+# nx.draw(G, pos, with_labels=False, font_weight='bold', node_size=5)
+# nx.draw_networkx_edge_labels(G, pos, edge_labels=labels)
 
-nx.draw_networkx_nodes(G, pos, nodelist=[inicio], node_color='green', node_size=100) # PUNTO DE INICIO ES COLOR VERDE
-nx.draw_networkx_nodes(G, pos, nodelist=[fin], node_color='blue', node_size=100) # PUNTO DE FIN ES COLOR AZUL
+# edges_camino_corto = list(zip(camino_corto, camino_corto[1:]))
+# nx.draw_networkx_edges(G, pos, edgelist=edges_camino_corto, edge_color='red', width=3)
 
+# nx.draw_networkx_nodes(G, pos, nodelist=[inicio], node_color='green', node_size=100) # PUNTO DE INICIO ES COLOR VERDE
+# nx.draw_networkx_nodes(G, pos, nodelist=[fin], node_color='blue', node_size=100) # PUNTO DE FIN ES COLOR AZUL
+
+# plt.show()
+
+width = BIG_MAZE
+height = BIG_MAZE
+
+# Gráfica para mostrar en servidor
+plt.figure(figsize=(8, 8))
+plt.imshow(laberinto_array, cmap='binary_r', origin='upper')
+
+for i in range(height):
+    plt.plot([-0.5, width - 0.5], [i - 0.5, i - 0.5], 'w-', linewidth=2)
+
+for j in range(width):
+    plt.plot([j - 0.5, j - 0.5], [-0.5, height - 0.5], 'w-', linewidth=2)
+
+for k in range(len(camino_corto) - 1):
+    y1, x1 = camino_corto[k]
+    y2, x2 = camino_corto[k + 1]
+    plt.plot([x1, x2], [y1, y2], color='red', linewidth=3)
+
+# plt.scatter([0], [0], color='green', s=100, marker='o')  # Punto de inicio
+# plt.scatter([width - 1], [height - 1], color='blue', s=100, marker='o')  # Punto de fin
+
+print(G)
+plt.axis('equal')
+plt.axis('off')
 plt.show()
