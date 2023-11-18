@@ -5,8 +5,9 @@ import matplotlib.pyplot as plt
 import random
 
 # Obtener el laberinto y crear la matriz y el grafo
-laberinto = creacion_laberinto.maze_list
-laberinto_array = np.array([[1 if c == ' ' else 0 for c in row] for row in laberinto])
+laberinto = mazes.maze_list
+laberinto_array = np.array([[0 if c == ' ' else 1 for c in row] for row in laberinto])
+
 G = nx.Graph()
 
 filas, columnas = laberinto_array.shape
@@ -30,7 +31,7 @@ for fila in range(filas):
                 nueva_columna = columna + dy
                 if 0 <= nueva_fila < filas and 0 <= nueva_columna < columnas and laberinto_array[nueva_fila, nueva_columna] == 1:
                     nodo_adyacente = (nueva_fila, nueva_columna)
-                    peso = random.randint(1, 20)  # Asignar peso aleatorio entre 1 y 20
+                    peso = 1  # Asignar peso aleatorio entre 1 y 20
                     G.add_edge(actual, nodo_adyacente, weight=peso)
 
 # Algoritmo de Dijkstra para encontrar el camino más corto desde el primer nodo al último nodo
