@@ -18,10 +18,9 @@ def generate_maze(width, height):
                 generate(nx, ny)
 
     generate(1, 1)
-    maze[0][1] = maze[height - 1][width - 2] = 1  # Inicio y salida
+    maze[0][1] = maze[height - 1][width - 2] = 1
 
-    # Agregar caminos adicionales (proporcional al tamaño del laberinto)
-    num_additional_paths = (width * height) // 10  # Ajusta la proporción
+    num_additional_paths = (width * height) // 10
     for _ in range(num_additional_paths):
         x, y = random.randrange(1, width - 1, 2), random.randrange(1, height - 1, 2)
         maze[y][x] = 1
@@ -39,12 +38,9 @@ def maze_to_list(maze):
         maze_list.append(row_str)
     return maze_list
 
-# Tamaño del laberinto (asegúrate de que ambos sean impares)
 width, height = 21, 21
 
 maze = generate_maze(width, height)
 maze_list = maze_to_list(maze)
 
 print(maze_list)
-
-# display_maze(maze)
