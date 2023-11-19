@@ -1,0 +1,11 @@
+export const BTN_SHORT_SIZE = document.getElementById('btn-short-size');
+export const BTN_MEDIUM_SIZE = document.getElementById('btn-medium-size');
+export const BTN_BIG_SIZE = document.getElementById('btn-big-size');
+export const BTN_DIJKSTRA = document.getElementById('btn-dijkstra');
+export const BTN_BFS = document.getElementById('btn-bfs');
+export const BTN_A_STAR = document.getElementById('btn-a-star');
+export const BTN_GENERATE_MAZE = document.getElementById('btn-generate-maze');
+export const BTN_RESET = document.getElementById('btn-reset');
+export const BTN_DEFAULT_BACKGROUND_COLOR = 'rgba(0, 0, 0, 0.1)';
+export const BTN_SELECTED_BACKGROUND_COLOR = '#000000a5';
+export const IMAGE = document.getElementById('img-maze');

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +14,11 @@
 
   <!-- Title -->
   <title>Generador de laberintos</title>
-  
+
+  <!-- Import Axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
+
 <body>
   <main>
     <div class="container">
@@ -24,44 +28,54 @@
         </div>
         <div class="options">
           <ul>
-             <a href="index.html"><li title="Inicio"><img src="img/home.svg" width="37px" height="37px"></li></a>
-              <a href="about.html"><li title="Acerca de"><img src="img/about.svg" width="32px" height="32px"></li></a>
-            <a href="instructions.html"><li title="Instrucciones"><img src="img/instructions.svg" width="32px" height="32px"></li></a>
-           </ul>
+            <a href="index.html">
+              <li title="Inicio"><img src="img/home.svg" width="37px" height="37px"></li>
+            </a>
+            <a href="about.html">
+              <li title="Acerca de"><img src="img/about.svg" width="32px" height="32px"></li>
+            </a>
+            <a href="instructions.html">
+              <li title="Instrucciones"><img src="img/instructions.svg" width="32px" height="32px"></li>
+            </a>
+          </ul>
         </div>
       </div>
       <div class="content">
         <div class="banner">
           <h1>GENERADOR DE LABERINTOS</h1>
         </div>
-
-        
         <div class="laberinto">
-            <div class="control">
-                <p><i class="fa-solid fa-wallet"></i>Tamaño de laberinto</p>
-                <div class="buttons">
-                <button>Pequeño</button>
-                <button>Mediano</button>
-                <button>Grande</button>
-                </div>
-
-                <p><i class="fa-solid fa-wallet"></i>Algoritmo de     recorrido</p>
-                <div class="buttons">
-                <button>Dijkstra</button>
-                <button>BFS</button>
-                <button>A*</button>
-                </div>
-
-                <button class="centrar">Generar</button>
+          <div class="control">
+            
+            <p><i class="fa-solid fa-wallet"></i>Tamaño de laberinto</p>
+            <div class="buttons">
+              <button id="btn-short-size" type="button">Pequeño</button>
+              <button id="btn-medium-size" type="button">Mediano</button>
+              <button id="btn-big-size" type="button">Grande</button>
             </div>
-            <img width="300px" src="img/laberinto.png"></img>
+
+            <p><i class="fa-solid fa-wallet"></i>Algoritmo de recorrido</p>
+            <div class="buttons">
+              <button id="btn-dijkstra" type="button">Dijkstra</button>
+              <button id="btn-bfs" type="button">BFS</button>
+              <button id="btn-a-star" type="button">A*</button>
+            </div>
+
+            <div class="buttons-request">
+              <button id="btn-generate-maze" type="button" class="centrar">Generar</button>
+              <button id="btn-reset" type="button" class="centrar">Reiniciar</button>
+            </div>
+          </div>
+          <img id="img-maze" width="300px" src="img/laberinto.png"></img>
 
         </div>
-        
+
       </div>
     </div>
   </main>
-  
-  <footer></footer>
+
+  <!-- Import Application JS -->
+  <script type="module" src="js/index.js"></script>
 </body>
+
 </html>

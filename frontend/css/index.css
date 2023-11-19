@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -57,44 +58,48 @@ html, body {
   min-height: 100vh;
 }
 
-.banner{
-  background-image: url('../img/banner-2.png'); 
+.banner {
+  background-image: url('../img/banner-2.png');
   background-size: cover;
   background-position: center;
   color: white;
   text-align: center;
-  padding: 90px 0; /* Ajusta el espacio interno superior e inferior según sea necesario */
-  border-radius: 20px; /* Establece esquinas redondeadas */
-  margin: 39px 35px 25px 30px; /* Establece un margen de 20 píxeles alrededor del banner */
+  padding: 90px 0;
+  /* Ajusta el espacio interno superior e inferior según sea necesario */
+  border-radius: 20px;
+  /* Establece esquinas redondeadas */
+  margin: 39px 35px 25px 30px;
+  /* Establece un margen de 20 píxeles alrededor del banner */
   font-family: 'Orbitron', sans-serif;
 }
 
 .banner h1 {
   font-size: 36px;
   background-color: rgb(0, 0, 0, 1);
-  color: white; /* Establece el color del texto a negro */
+  color: white;
+  /* Establece el color del texto a negro */
 }
 
 .laberinto {
   background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   margin: 0px 30px;
   padding: 20px;
   gap: 50px;
-  border-radius:5px;
+  border-radius: 5px;
   justify-content: center;
   font-size: 18px;
   letter-spacing: 1px;
 }
 
-.control{
+.control {
   padding: 0 10px;
   min-width: 330px;
   width: 25%;
-  gap:5px;
-  display:flex;
-  flex-direction:column;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
   color: white;
 }
 
@@ -105,52 +110,59 @@ html, body {
   min-width: 350px;
 }
 
-.control p{
+.control p {
   font-family: 'Inter', sans-serif;
 }
 
-.buttons{
-  display:flex;
+.buttons {
+  display: flex;
   justify-content: space-between;
 }
 
-.buttons button, .centrar {
+.buttons-request {
+  text-align: center;
+}
+
+.buttons button,
+.centrar {
   min-width: 100px;
   background-color: rgba(0, 0, 0, 0.1);
-  outline:none;
-  border:none;
+  outline: none;
+  border: none;
   font-family: 'Lato', sans-serif;
   font-size: 14px;
   padding: 10px 20px;
-  gap:20px;
+  gap: 20px;
   color: white;
   border-radius: 5px;
   font-size: 16px;
   letter-spacing: 0.5px;
   cursor: pointer;
 }
-.buttons button:hover, .centrar:hover {
+
+.buttons button:hover,
+.centrar:hover {
   background-color: #000000a5;
   color: white;
 }
 
-.centrar{
+.centrar {
   align-self: center;
   margin-top: 30px;
-  background-color:#0c162983;
+  background-color: #0c162983;
 }
 
 .fa-solid {
   margin-right: 10px;
 }
 
-.banner.about{
-    background-image: url('../img/banner-2.png'); 
+.banner.about {
+  background-image: url('../img/banner-2.png');
 }
 
-.history{
+.history {
   background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
-  color:white;
+  color: white;
   margin: 0 30px;
   padding: 35px;
   text-align: center;
@@ -160,9 +172,9 @@ html, body {
   min-height: 300px;
 }
 
-.description{
+.description {
   width: 80%;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   max-width: 900px;
   letter-spacing: 1px;
 }
@@ -174,7 +186,7 @@ html, body {
 .instructions {
   padding: 20px 0;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color:white;
+  color: white;
   margin: 40px;
   font-size: 20px;
   display: flex;
@@ -186,11 +198,12 @@ html, body {
   font-weight: bold;
 
 }
+
 .instructions li {
   margin-bottom: 20px;
 }
 
-.number{
+.number {
   clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
   background-color: #09203f;
   width: 50px;
@@ -201,23 +214,21 @@ html, body {
 }
 
 
-.instructions li{
+.instructions li {
   width: 90%;
   display: flex;
   text-align: center;
   align-items: center;
-  background-image: linear-gradient(
-    110deg,
-    hsl(205deg 67% 69%) 0%,
-    hsl(207deg 72% 65%) 10%,
-    hsl(209deg 75% 61%) 19%,
-    hsl(211deg 77% 58%) 27%,
-    hsl(214deg 76% 56%) 36%,
-    hsl(218deg 74% 55%) 46%,
-    hsl(221deg 51% 47%) 55%,
-    hsl(223deg 42% 39%) 65%,
-    hsl(226deg 32% 31%) 76%,
-    hsl(230deg 20% 22%) 88%,
-    hsl(0deg 0% 14%) 100%
-  );
+  background-image: linear-gradient(110deg,
+      hsl(205deg 67% 69%) 0%,
+      hsl(207deg 72% 65%) 10%,
+      hsl(209deg 75% 61%) 19%,
+      hsl(211deg 77% 58%) 27%,
+      hsl(214deg 76% 56%) 36%,
+      hsl(218deg 74% 55%) 46%,
+      hsl(221deg 51% 47%) 55%,
+      hsl(223deg 42% 39%) 65%,
+      hsl(226deg 32% 31%) 76%,
+      hsl(230deg 20% 22%) 88%,
+      hsl(0deg 0% 14%) 100%);
 }
