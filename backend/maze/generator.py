@@ -1,7 +1,20 @@
+from util.constants import SHORT, MEDIUM, BIG
 import random
-from constants import LITTLE_MAZE, MEDIUM_MAZE, BIG_MAZE
 
-def generate_maze(width, height):
+def get_dimensions(size):
+    if size == SHORT:
+        return 11, 11
+
+    if size == MEDIUM:
+        return 21, 21
+    
+    if size == BIG:
+        return 57, 57
+    
+    return 0, 0
+    
+def generate_maze(size):
+    width, height = get_dimensions(size)
     maze = [[0] * width for _ in range(height)]
 
     def is_valid(x, y):
@@ -28,18 +41,9 @@ def generate_maze(width, height):
 
     return maze
 
-def display_maze(maze):
-    for row in maze:
-        print(''.join(['#' if cell == 0 else ' ' for cell in row]))
-
 def maze_to_list(maze):
     maze_list = []
     for row in maze:
         row_str = ''.join(['#' if cell == 1 else ' ' for cell in row])
         maze_list.append(row_str)
     return maze_list
-
-width, height = BIG_MAZE, BIG_MAZE
-
-maze = generate_maze(width, height)
-maze_list = maze_to_list(maze)
