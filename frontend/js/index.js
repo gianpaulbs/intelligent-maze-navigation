@@ -69,7 +69,8 @@ const selectedOptionsIsValid = () => {
 const send = () => {
     if (!selectedOptionsIsValid()) return;
 
-    const BASE_URL = 'http://127.0.0.1:8000';
+    // const BASE_URL = 'http://127.0.0.1:8000';
+    const BASE_URL = 'https://intelligent-maze-navigation-9ef60ddb10a3.herokuapp.com'
     axios
         .post(`${BASE_URL}/generate-maze`, body)
         .then((response) => {
