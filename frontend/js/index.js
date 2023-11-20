@@ -75,7 +75,7 @@ const send = () => {
         .then((response) => {
             UI.IMAGE.src = `data:image/png;base64, ${response.data.image}`;
             UI.TIME_CONTAINER.style.display = 'block';
-            UI.TIME_LABEL.innerText = response.data.time;
+            UI.TIME_LABEL.innerText = `${response.data.time} s`;
             body.maze_structure = response.data.maze_structure;
         })
         .catch((error) => {
@@ -91,6 +91,7 @@ const reset = () => {
     UI.BTN_BFS.style.backgroundColor = UI.BTN_DEFAULT_BACKGROUND_COLOR;
     UI.BTN_A_STAR.style.backgroundColor = UI.BTN_DEFAULT_BACKGROUND_COLOR;
     UI.IMAGE.src = 'img/laberinto.png';
+    UI.TIME_CONTAINER.style.display = 'none';
     body.type_maze = 0;
     body.type_algorithm = 0;
 }
