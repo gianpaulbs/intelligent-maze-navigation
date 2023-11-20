@@ -3,7 +3,8 @@ import * as TYPE from './constants/type.constant.js';
 
 let body = {
     type_maze: 0,
-    type_algorithm: 0
+    type_algorithm: 0,
+    maze_structure: []
 }
 
 const chooseTypeSize = (size) => {
@@ -25,6 +26,7 @@ const chooseTypeSize = (size) => {
             break;
     }
 
+    body.maze_structure = [];
     body.type_maze = size;
 }
 
@@ -50,25 +52,31 @@ const chooseTypeAlgorithm = (algorithm) => {
     body.type_algorithm = algorithm;
 }
 
-const validIfSelectedOptions = () => {
+const selectedOptionsIsValid = () => {
     if (body.type_maze == 0 && body.type_algorithm == 0) {
         alert('Debes escoger el tamaño del laberinto y el algoritmo de recorrido.');
-        return;
+        return false;
     }
 
     if (body.type_maze == 0 && body.type_algorithm != 0) {
         alert('Debes escoger el tamaño del laberinto para generar el recorrido.');
-        return;
+        return false;
     }
+
+    return true;
 }
 
 const send = () => {
-    validIfSelectedOptions();
+    if (!selectedOptionsIsValid()) return;
 
+    const BASE_URL = 'http://127.0.0.1:8000';
     axios
-        .post('http://127.0.0.1:8000/generate-maze', body)
+        .post(`${BASE_URL}/generate-maze`, body)
         .then((response) => {
             UI.IMAGE.src = `data:image/png;base64, ${response.data.image}`;
+            UI.TIME_CONTAINER.style.display = 'block';
+            UI.TIME_LABEL.innerText = response.data.time;
+            body.maze_structure = response.data.maze_structure;
         })
         .catch((error) => {
             console.log(error);
@@ -93,5 +101,8 @@ UI.BTN_BIG_SIZE.addEventListener('click', () => chooseTypeSize(3));
 UI.BTN_DIJKSTRA.addEventListener('click', () => chooseTypeAlgorithm(1));
 UI.BTN_BFS.addEventListener('click', () => chooseTypeAlgorithm(2));
 UI.BTN_A_STAR.addEventListener('click', () => chooseTypeAlgorithm(3));
-UI.BTN_GENERATE_MAZE.addEventListener('click', send);
+UI.BTN_GENERATE_MAZE.addEventListener('click', (event) =>  {
+    event.preventDefault();
+    send();
+});
 UI.BTN_RESET.addEventListener('click', reset);

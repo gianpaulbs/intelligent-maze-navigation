@@ -8,4 +8,6 @@ export const BTN_GENERATE_MAZE = document.getElementById('btn-generate-maze');
 export const BTN_RESET = document.getElementById('btn-reset');
 export const BTN_DEFAULT_BACKGROUND_COLOR = 'rgba(0, 0, 0, 0.1)';
 export const BTN_SELECTED_BACKGROUND_COLOR = '#000000a5';
+export const TIME_CONTAINER = document.getElementById('time-container');
+export const TIME_LABEL = document.getElementById('lbl-time');
 export const IMAGE = document.getElementById('img-maze');

@@ -46,30 +46,30 @@
         </div>
         <div class="laberinto">
           <div class="control">
-            
-            <p><i class="fa-solid fa-wallet"></i>Tamaño de laberinto</p>
+            <p><i class="fa-solid fa-expand"></i>Tamaño de laberinto:</p>
             <div class="buttons">
               <button id="btn-short-size" type="button">Pequeño</button>
               <button id="btn-medium-size" type="button">Mediano</button>
               <button id="btn-big-size" type="button">Grande</button>
             </div>
-
-            <p><i class="fa-solid fa-wallet"></i>Algoritmo de recorrido</p>
+            <p><i class="fa-solid fa-code-branch"></i>Algoritmo de recorrido:</p>
             <div class="buttons">
               <button id="btn-dijkstra" type="button">Dijkstra</button>
               <button id="btn-bfs" type="button">BFS</button>
               <button id="btn-a-star" type="button">A*</button>
             </div>
-
             <div class="buttons-request">
-              <button id="btn-generate-maze" type="button" class="centrar">Generar</button>
-              <button id="btn-reset" type="button" class="centrar">Reiniciar</button>
+              <form>
+                <button id="btn-generate-maze" type="button" class="centrar">Generar</button>
+                <button id="btn-reset" type="button" class="centrar">Reiniciar</button>
+              </form>
             </div>
+            <div id="time-container" class="time-container">
+              <p><i class="fa-solid fa-clock"></i>Procesamiento: <label id="lbl-time"></label></p>
+            </div> 
           </div>
-          <img id="img-maze" width="300px" src="img/laberinto.png"></img>
-
+          <img id="img-maze" title="laberinto" width="300px" src="img/laberinto.png"></img>
         </div>
-
       </div>
     </div>
   </main>
